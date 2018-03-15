@@ -72,6 +72,8 @@ on u.id = t.userid;
 
 
 -- Find which user has the most followers.
+
+-- This 1st method with "max" only gets "Alice 4", but no "Cathy 4".
 select u.name, max(c.count)
 from (
     select userid, count(follower) as count
@@ -80,3 +82,26 @@ from (
     ) as c
 join user as u
 on u.id = c.userid;
+
+
+-- The 2nd method with "limit and order by" only gets "Cathy 4 | Belle 3", but no "Alice 4".
+select u.name, c.count
+from (
+    select userid, count(follower) as count
+    from follow as f 
+    group by userid
+    ) as c
+join user as u
+on u.id = c.userid
+group by c.count
+order by c.count desc
+limit 2;
+
+
+-- The 3rd method with "having" gets "Alice 4 | Cathy 4". But if I change "fc = 4" to "fc = max(fc)", it won't work.
+select u.name, count(f.follower) as fc
+from user as u
+join follow as f
+on u.id = f.userid
+group by f.userid
+having fc = 4;
