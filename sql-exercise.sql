@@ -66,8 +66,8 @@ limit 10;
 
 -- Use a join to get a user's info along with their tweets.
 select * 
-from user u 
-join tweets t 
+from user as u 
+join tweets as t 
 on u.id = t.userid;
 
 
@@ -77,5 +77,5 @@ from (
     select count(follower) as count 
     from follow f 
     group by userid
-    ) c;
+    ) as c;
 
