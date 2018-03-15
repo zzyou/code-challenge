@@ -72,10 +72,11 @@ on u.id = t.userid;
 
 
 -- Find which user has the most followers.
-select max(c.count) 
+select u.name, max(c.count)
 from (
-    select count(follower) as count 
+    select userid, count(follower) as count
     from follow as f 
     group by userid
-    ) as c;
-
+    ) as c
+join user as u
+on u.id = c.userid;
