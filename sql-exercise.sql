@@ -75,7 +75,7 @@ on u.id = t.userid;
 select max(c.count) 
 from (
     select count(follower) as count 
-    from follow f 
+    from follow as f 
     group by userid
     ) as c;
 
