@@ -58,27 +58,27 @@ values
 (5, 1);
 
 
--- All the tweets by a given user.
+-- Question 1: All the tweets by a given user.
 select tweet 
 from tweets 
 where userid = 4;
 
 
--- The 10 most recent tweets.
+-- Question 2: The 10 most recent tweets.
 select tweet 
 from tweets 
 order by twtdate desc 
 limit 10;
 
 
--- Use a join to get a user's info along with their tweets.
+-- Question 3: Use a join to get a user's info along with their tweets.
 select u.id, u.name, t.tweet, t.twtdate 
 from user as u 
 join tweets as t 
 on u.id = t.userid;
 
 
--- Find which user has the most followers.
+-- Question 4: Find which user has the most followers.
 
 -- This 1st method with "max" only gets "Alice 4", but no "Cathy 4".
 select u.name, max(c.count)
@@ -91,7 +91,7 @@ join user as u
 on u.id = c.userid;
 
 
--- The 2nd method with "limit and order by" only gets "Cathy 4", but no "Alice 4".
+-- The 2nd method with "limit and order by" only gets "Cathy 4 | Belle 3", but not "Alice 4 | Cathy 4".
 select u.name, c.count
 from (
     select userid, count(follower) as count
@@ -102,7 +102,7 @@ join user as u
 on u.id = c.userid
 group by c.count
 order by c.count desc
-limit 1;
+limit 2;
 
 
 -- The 3rd method with "having" gets "Alice 4 | Cathy 4". But if I change "fc = 4" to "fc = max(fc)", it won't work.
