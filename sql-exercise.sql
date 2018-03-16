@@ -5,8 +5,9 @@ create table user (
     );
 create table tweets (
     userid INTEGER, 
-    twtid INTEGER, 
-    tweet TEXT
+    twtid INTEGER,
+    tweet TEXT,
+    twtdate DATE
     );
 create table follow (
     userid INTEGER, 
@@ -23,15 +24,21 @@ values
 
 insert into tweets 
 values 
-(1, 1, "tweet 11111111"), 
-(1, 2, "tweet 2222222222222"), 
-(1, 3, "tweet 333333333333"), 
-(2, 4, "1111111111111222222222"), 
-(3, 5, "helooooooooooooooooooooo"), 
-(3, 6, "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"), 
-(4, 7, "what's going on?"), 
-(4, 8, "i don't know what to say."), 
-(5, 9, "nothing");
+(1, 1, "OK, start my tweet!", "2018-01-01"), 
+(1, 2, "Day 2, what should I write?", "2018-01-02"), 
+(1, 3, "Emmmm, interesting!", "2018-01-03"), 
+(2, 4, "Someone asked me to have a tweet account.", "2018-01-04"), 
+(3, 5, "Hello, I am Cathy!", "2018-01-05"), 
+(3, 6, "Hello World!", "2018-01-06"), 
+(4, 7, "What's going on?", "2018-01-07"), 
+(4, 8, "I don't know what to say.", "2018-01-08"), 
+(5, 9, "Nothing.", "2018-01-09"),
+(1, 10, "Back to work!", "2018-01-10"),
+(2, 11, "Maybe I should delete this account.", "2018-01-11"),
+(3, 12, "Hello again!", "2018-01-12"),
+(4, 13, "OK, say something. I am Doris.", "2018-01-13"),
+(5, 14, "Still nothing.", "2018-01-14"),
+(1, 15, "How are you doing?", "2018-01-15");
 
 insert into follow 
 values 
@@ -60,12 +67,12 @@ where userid = 4;
 -- The 10 most recent tweets.
 select tweet 
 from tweets 
-order by twtid desc 
+order by twtdate desc 
 limit 10;
 
 
 -- Use a join to get a user's info along with their tweets.
-select * 
+select u.id, u.name, t.tweet, t.twtdate 
 from user as u 
 join tweets as t 
 on u.id = t.userid;
