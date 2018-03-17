@@ -25,10 +25,10 @@ average([10,20]);
 // Write a function called createStudent, which accepts two parameters both of which are strings. The function should return an object with the keys firstName and lastName and the values should be each of the parameters.
 
 function createStudent (fname, lname) {
-  var obj = {};
-  obj.firstName = fname;
-  obj.lastName = lname;
-  return obj;
+  return {
+    firstName: firstName,
+    lastName: lastName
+  };
 }
 
 
@@ -62,10 +62,14 @@ findStudentByFirstName('MMMaaaTTTtttTTT');
 
 function extractEveryThird (arr) {
   var newArr = [];
-  for (let e of arr) {
-    if ((arr.indexOf(e) + 1) % 3 === 0) {
-      newArr.push(e);
-    }
+  // // Another way to write the for loop.
+  // for (let e of arr) {
+  //   if ((arr.indexOf(e) + 1) % 3 === 0) {
+  //     newArr.push(e);
+  //   }
+  // }
+  for (let i = 2; i < arr.length; i += 3) {
+    newArr.push(arr[i]);
   }
   return newArr;
 }
@@ -79,21 +83,43 @@ extractEveryThird(["first value", "second value", "third value"]);
 // Write a function called countEvensAndOdds which accepts an array as a parameter. This function should return an object with the count of even numbers and the count of odd numbers. The object returned should have the keys oddCount and evenCount.
 
 function countEvensAndOdds (arr) {
-  var ecount = 0;
-  var ocount = 0;
-  var obj = {};
+  var obj = {
+    oddCount: 0,
+    evenCount: 0
+  }
   for (let e of arr) {
     if (e % 2 === 0) {
-      ecount += 1;
+      obj.evenCount ++;
     }
     else {
-      ocount += 1;
+      obj.oddCount ++;
     }
   }
-  obj.evenCount = ecount;
-  obj.oddCount = ocount;
   return obj;
 }
 
 countEvensAndOdds([1,2,3,4]);
 countEvensAndOdds([1,2,3,4,5,6,7]);
+
+
+// Write a function called onlyCapitalLetters which accepts a string and returns a new string with only the capital letters passed to the string.
+
+function onlyCapitalLetters(str) {
+  var newStr = '';
+  for (let cha of str) {
+    if (str.toUpperCase().includes(cha)) {
+      newStr += cha;
+    }
+  }
+  // // Another way to write the for loop.
+  // for (let i = 0; i < str.length; i++) {
+  //     if (64 < str.charCodeAt(i) < 91) {
+  //       newStr += str[i];
+  //   }    
+  // }
+  return newStr;
+}
+
+onlyCapitalLetters("Amazing");
+onlyCapitalLetters("nothing");
+onlyCapitalLetters("EVERYTHING");
