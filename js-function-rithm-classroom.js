@@ -69,3 +69,85 @@ arr; // [1, 2, 3]
 var emptyArr = [];
 pop(emptyArr); // undefined
 emptyArr.length; // 0
+
+
+
+// Write a function called unshift which accepts an array and a value and adds the value to the beginning of the array.
+// This function should return the new length of the array.
+// Do not use the built in Array.unshift() function!
+
+function unshift(arr, val) {
+  for (let i = arr.length; i > 0; i--) {
+    arr[i] = arr[i - 1];
+  }
+  arr[0] = val;
+  return arr.length;
+}
+
+var arr = [1, 2, 3];
+unshift(arr, 0); // 4
+arr; // [0, 1, 2, 3]
+
+unshift([4, 5, 6], 10); // 4
+
+
+
+// Write a function called shift which accepts an array and removes the first value in the array and then returns the value removed. It should return undefined if the array is empty.
+// Do not use the built in shift function!
+
+function shift(arr) {
+  if (arr.length === 0) {
+    return undefined;
+  }
+  var shifted = arr[0];
+  for (let i = 0; i < arr.length - 1; i++) {
+    arr[i] = arr[i+1];
+  }
+  arr.length = arr.length - 1;
+  return shifted;
+}
+
+var arr = ["a","b","c"];
+shift(arr); // "a"
+arr; // ["b","c"]
+
+var emptyArr = [];
+shift(emptyArr); // undefined
+emptyArr.length; // 0
+
+
+
+// Write a function called reverse, which accepts an array and returns the same array with all of the values reversed. In other words, do not solve this by creating a new array.
+// Note: returning the same array is called an in-place operation, since no additional space is used. https://en.wikipedia.org/wiki/In-place_algorithm 
+// Do not use the built in Array.reverse() function!
+
+function reverse(arr) {
+  // cannot use "var newArr = arr", because newArr will change according to arr's change.
+  var newArr = Array.from(arr);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = newArr[(newArr.length - i - 1)];
+  }
+  return arr;
+}
+
+// // Another method, cutting from the middle:
+// function reverse(arr) {
+//   let middle = Math.floor(arr.length / 2);
+//   for (let i = 0; i < middle; i++) {
+//     let end = arr.length - 1;
+//     let temp = arr[i];
+//     arr[i] = arr[end - i];
+//     arr[end - i] = temp;
+//   }
+//   return arr;
+// }
+
+reverse([5, 4, 3, 2, 1]); // [1, 2, 3, 4, 5]
+reverse([]); // []
+
+var arr = [1, 2, 3];
+reverse(arr); // [3, 2, 1]
+arr; // [3, 2, 1]
+
+
+
