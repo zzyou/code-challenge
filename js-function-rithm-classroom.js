@@ -167,7 +167,7 @@ function concat (arr1, ...arrs) {
  return arr1;
 }
 
-// // Another method using arguments.
+// // Another method using "arguments".
 
 // function concat() {
 //   let newArr = [];
@@ -179,7 +179,7 @@ function concat (arr1, ...arrs) {
 //   return newArr;
 // }
 
-// // Another method using forEach.
+// // Another method using "forEach".
 
 // function concat(...arrays) {
 //   let newArr = [];
