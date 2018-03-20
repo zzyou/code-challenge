@@ -24,6 +24,7 @@ function removeFromString(str, ind, num) {
 }
 
 // // Another method:
+
 // function removeFromString(str, start, removeCount) {
 //   let newStr = '';
 //   for (let i = 0; i < str.length; i++) {
@@ -53,6 +54,7 @@ function pop(arr) {
 }
 
 // // Another method: 
+
 // function pop(arr) {
 //   if (arr.length === 0) {
 //     return;
@@ -131,6 +133,7 @@ function reverse(arr) {
 }
 
 // // Another method, cutting from the middle:
+
 // function reverse(arr) {
 //   let middle = Math.floor(arr.length / 2);
 //   for (let i = 0; i < middle; i++) {
@@ -148,6 +151,49 @@ reverse([]); // []
 var arr = [1, 2, 3];
 reverse(arr); // [3, 2, 1]
 arr; // [3, 2, 1]
+
+
+
+// Write a function called concat, which accepts an array, and a variable amount of parameters (all of which are arrays). 
+// The function returns a new array with all of the remaining parameters joined with the array.
+// Do not use the built in Array.concat() function!
+
+function concat (arr1, ...arrs) {
+  for (let arr of arrs) {
+    for (let e of arr) {
+      arr1.push(e);
+    }
+  } 
+ return arr1;
+}
+
+// // Another method using arguments.
+
+// function concat() {
+//   let newArr = [];
+//   for (let arr of arguments) {
+//     for (let item of arr) {
+//       newArr.push(item);
+//     }
+//   }
+//   return newArr;
+// }
+
+// // Another method using forEach.
+
+// function concat(...arrays) {
+//   let newArr = [];
+//   arrays.forEach(arr => {
+//     arr.forEach(item => {
+//       newArr.push(item);
+//     });
+//   });
+//   return newArr;
+// }
+
+concat([1, 2, 3], [4, 5, 6]); // [1, 2, 3, 4, 5, 6]
+concat([1, 2, 3], [4], [5], [6]); // [1, 2, 3, 4, 5, 6]
+concat([1], [[2], [3]], [4]); // [1, [2], [3], 4]
 
 
 
