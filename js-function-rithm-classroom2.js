@@ -234,8 +234,28 @@ function squareEvenNumbers(arr) {
     return sum;
 }
 
+squareEvenNumbers([1, 2, 3, 4, 5]); // 20
+squareEvenNumbers([1, 3, 5, 7]); // 0
+squareEvenNumbers([5, 6, 7]); // 36
 
 
 
+// Implement a function called multiples that accepts two numbers: x and n. 
+// The function should return the first n multiples of the number x. 
+// Assume that x is a positive integer.
+
+function multiples (x, n) {
+    let result = [];
+    for (let i = 1; i <= n; i++) {
+        result.push(x * i);
+    }
+    return result;
+}
+
+multiples(3, 4) // [3, 6, 9, 12]
+multiples(2, 5) // [2, 4, 6, 8, 10]
 
 
+
+// Question Credit: Rithm School
+// https://repl.it/student/classrooms/24687

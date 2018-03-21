@@ -123,3 +123,8 @@ function onlyCapitalLetters(str) {
 onlyCapitalLetters("Amazing");
 onlyCapitalLetters("nothing");
 onlyCapitalLetters("EVERYTHING");
+
+
+
+// Question Credit: Rithm School
+// https://www.rithmschool.com/courses/javascript
