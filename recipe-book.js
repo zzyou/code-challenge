@@ -35,7 +35,6 @@ var grilledCheese = new Recipe('Grilled Cheese', ['bread', 'cheese', 'butter'], 
 //   }
 // };
 
-
 // console.log(grilledCheese);
 // console.log(grilledCheese2);
 // grilledCheese2.printIngredientList();

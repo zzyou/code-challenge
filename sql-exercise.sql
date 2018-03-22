@@ -92,6 +92,8 @@ on u.id = c.userid;
 
 
 -- The 2nd method with "limit and order by" only gets "Cathy 4 | Belle 3", but not "Alice 4 | Cathy 4".
+-- This didn't work because of the "group by c.count", which gave only one user for each count.
+-- Use the rewritten 2nd method. The following code is not efficient. 
 select u.name, c.count
 from (
     select userid, count(follower) as count
@@ -100,9 +102,18 @@ from (
     ) as c
 join user as u
 on u.id = c.userid
-group by c.count
+-- group by c.count
 order by c.count desc
 limit 2;
+
+-- Just rewrite the 2nd method, and it works!
+select u.name, count(follower) as count
+from follow as f
+join user as u
+on u.id = f.userid
+group by userid
+order by count desc
+limit 2; 
 
 
 -- The 3rd method with "having" gets "Alice 4 | Cathy 4". But if I change "fc = 4" to "fc = max(fc)", it won't work.
