@@ -163,7 +163,7 @@ stringFromObject({});
 // If the value is an array, add another pair to the string with each value.
 
 function toQueryString(obj) {
-  
+  Object.entries(obj)
 
 }
 
