@@ -163,7 +163,36 @@ stringFromObject({});
 // If the value is an array, add another pair to the string with each value.
 
 function toQueryString(obj) {
-  Object.entries(obj)
-
+  var entries = Object.entries(obj);
+  var result = [];
+  for (let pair of entries) {
+    if (Array.isArray(pair[1])) {
+      for (let val of pair[1]) {
+        result.push(`${pair[0]}=${val}`);
+      }
+    }
+    else {
+      result.push(`${pair[0]}=${pair[1]}`);
+    }
+  }
+  return result.join('&');
 }
 
+// Another method using str +=:
+function toQueryString(obj){
+  var str = '';
+  for(var key in obj){
+    if(Array.isArray(obj[key])){
+      for(var i = 0; i < obj[key].length; i++){
+        str += '&' + key + '=' + obj[key][i]
+      }
+    } else {
+      str += '&' + key + '=' + obj[key]
+    }
+  }
+  return str.slice(1);
+}
+
+toQueryString({}) // ""
+toQueryString({"bar": [ 2, 3], "foo": 1 }) // "bar=2&bar=3&foo=1"
+toQueryString({name: "Elie", "nums": [1,2,3,4]}) // "name=Elie&nums=1&nums=2&nums=3&nums=4"
