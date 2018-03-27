@@ -59,3 +59,44 @@ generatePairs(0) // [ [0, 0]]
 
 
 
+/* A clerk works at a movie theater where each ticket costs $25. 
+There is a line of people waiting to buy tickets, and each one has a single $100, $50, or $25 bill. 
+The clerk wants to sell a ticket to every person in the line. 
+For each input, can she sell a ticket to everyone and give change if she starts with no money and has to go through the line in order? 
+If so, your function should return "YES." If not, it should return "NO."
+Write a function called canSellTickets based on the above scenario. 
+Note that for any person in line, the clerk does not know the values of all future bills. 
+The clerk simply tries to make change using whatever she has at the time and favors getting rid of larger bills first. */
+
+function canSellTickets(arr) {
+    let twentyfive = [];
+    let fifty = [];
+    for (let money of arr) {
+        if (money === 25) {
+            twentyfive.push(25);
+        }
+        else if (money === 50) {
+            if (twentyfive.length >= 1) {
+                twentyfive.length --;
+                fifty.push(50);
+            } 
+            else {
+                return "No.";
+            }
+        }
+        else if (money === 100) {
+            if (fifty.length >= 1 && twentyfive.length >= 1) {
+                fifty.length --;
+                twentyfive.length --;
+            } 
+            else if (twentyfive.length >= 3) {
+                twentyfive.length -= 3;
+            }
+            else {
+                return "No.";
+            }
+        }
+    }
+    return "Yes.";
+}
+
