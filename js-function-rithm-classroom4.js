@@ -33,3 +33,29 @@ findTwins([2,3,6,34,7,8,2]) // 2
 findTwins([3,6,9,2,4,3,1,0]) // 3
 findTwins([]) // null
 findTwins([3,1,4,2,5]) // null
+
+
+
+/* Write a function generatePairs that accepts an integer and generates an array containing the pairs of integers [a, b]. 
+The pairs should be sorted by increasing values of a then increasing values of b. */
+
+function generatePairs(int) {
+    if (int < 0) {
+        return;
+    }
+    let arr = [];
+    for (let i = 0; i <= int; i++) {
+        for (let j = i; j <= int; j++) {
+            arr.push([i, j]);
+        }
+    }
+    return arr;
+}
+
+generatePairs(3) // [ [0, 0], [0, 1], [0, 2], [0, 3], [1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3] ]
+generatePairs(2) // [ [0, 0], [0, 1], [0, 2], [1, 1], [1, 2], [2, 2] ]
+generatePairs(1) // [ [0, 0], [0, 1], [1,1]]
+generatePairs(0) // [ [0, 0]]
+
+
+
