@@ -56,3 +56,32 @@ totalCaps(["hello", "world"]); // 0
 
 
 
+/* Given a string of words, your goal is to find the highest scoring word in the string. 
+a is worth 1 point, b is worth 2 points, c is worth 3 points, and so on, all the way up until z, which is worth 26 points. 
+You can assume that strings will consist only of lowercase letters and spaces.
+In the event that two words have the same score, return the word that appears first in the string. */
+
+function highestScoringWord(str) {
+    let arr = str.split(' ');
+    let highest = 0;
+    let highWord;
+    for (let word of arr) {
+        let count = 0;
+        for (let i = 0; i < word.length; i++) {
+            count += word.charCodeAt[i];
+        }
+        if (count > highest) {
+            highest = count;
+            highWord = word;
+        }
+    }
+    return highWord;
+}
+
+highestScoringWord("a b c d e f"); // "f"
+highestScoringWord("hello world"); // "world"
+highestScoringWord("go ahead make my day"); // "my"
+highestScoringWord("there is no place like home"); // "there"
+highestScoringWord("aaaaaa bbb cc f"); // "aaaaaa"
+highestScoringWord("bbb cc f aaaaaa"); // "bbb"
+highestScoringWord("this sentence has two highest scoring words"); // "sentence"
