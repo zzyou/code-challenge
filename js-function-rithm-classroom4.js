@@ -81,7 +81,7 @@ function canSellTickets(arr) {
                 fifty.push(50);
             } 
             else {
-                return "No.";
+                return "NO";
             }
         }
         else if (money === 100) {
@@ -93,10 +93,47 @@ function canSellTickets(arr) {
                 twentyfive.length -= 3;
             }
             else {
-                return "No.";
+                return "NO";
             }
         }
     }
-    return "Yes.";
+    return "YES";
 }
+
+// Another method using object instead of array:
+function canSellTickets(peopleInLine) {
+    const bills = { '25': 0, '50': 0, '100': 0 };
+    for (let money of peopleInLine) {
+      bills[money] += 1;       
+      if (money === 50) {
+        bills[25] -= 1;
+      } else if (money === 100) {
+        if (bills[50] > 0) {
+          bills[50] -= 1;
+          bills[25] -= 1;
+        } else {
+          bills[25] -= 3;
+        }
+      }
+      if (bills[25] < 0) {
+        return 'NO';
+      }
+    }
+    return 'YES';
+  }
+
+canSellTickets([]); // "YES"
+canSellTickets([25]); // "YES"
+canSellTickets([50]); // "NO"
+canSellTickets([100]); // "NO"
+canSellTickets([25, 50]); // "YES"
+canSellTickets([25, 100]); // "NO"
+canSellTickets([25, 25, 25, 25, 50, 100]); // "YES"
+canSellTickets([25, 25, 50, 100]); // "YES"
+canSellTickets([25, 25, 25, 100]); // "YES"
+canSellTickets([25, 50, 50, 25]); // "NO"
+canSellTickets([25, 50, 25, 100, 25, 25, 25, 50, 50, 100]); // "YES"
+canSellTickets([25, 50, 25, 100, 25, 25, 25, 50, 100, 100]); // "NO"
+
+
 
