@@ -63,16 +63,18 @@ In the event that two words have the same score, return the word that appears fi
 
 function highestScoringWord(str) {
     let arr = str.split(' ');
-    let highest = 0;
+    let highScore = 0;
     let highWord;
     for (let word of arr) {
-        let count = 0;
+        let score = 0;
         for (let i = 0; i < word.length; i++) {
-            count += word.charCodeAt[i];
+            // 'a' charCode is 97.
+            // substract 96 from each char to get a base 1.
+            score += (word.charCodeAt(i) - 96);
         }
-        if (count > highest) {
-            highest = count;
-            highWord = word;
+        if (score > highScore) {
+            highScore = score;
+            highWord = word;                
         }
     }
     return highWord;
