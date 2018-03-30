@@ -55,8 +55,44 @@ numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 BONUS: if you know what Big O notation is, try to solve this problem in O(n) time complexity, and O(1) space complexity. */
 
 function removeDuplicatesFromSorted(arr) {
-    
+    let newArr = [];
+    let i = 0;
+    while (true) {
+        if (i === arr.length) {
+            break;
+        }
+        if (newArr.includes(arr[i])) {
+            i ++;
+        }
+        else if (arr[i] === arr[i+1]) {
+            newArr.push(arr[i], arr[i+1]);
+            i += 2;
+        }
+        else if (arr[i] !== arr[i+1]) {
+            newArr.push(arr[i]);
+            i ++;
+        }
+    }
+    return newArr.length;
+}
 
+// Another method using for loop and two counts.
+// one total count for each unique element, and one conditional count/len for count < 3.
+function removeDuplicatesFromSorted(sortedArr) {
+    var len = 0;
+    var cur = null;
+    var count = 0;
+    for (var i = 0; i < sortedArr.length; i++) {
+      if (cur !== sortedArr[i]) {
+        cur = sortedArr[i]
+        len++;
+        count = 1;
+      } else {
+        count++;
+        if (count < 3) len++;
+      }
+    }
+    return len;
 }
 
 removeDuplicatesFromSorted([1, 1, 1, 2, 2, 3]); // 5
