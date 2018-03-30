@@ -70,6 +70,7 @@ function highestScoringWord(str) {
         for (let i = 0; i < word.length; i++) {
             // 'a' charCode is 97.
             // substract 96 from each char to get a base 1.
+            // otherwise the longer the word is, the higher the score is (comparing 97 to 1).
             score += (word.charCodeAt(i) - 96);
         }
         if (score > highScore) {
@@ -87,3 +88,43 @@ highestScoringWord("there is no place like home"); // "there"
 highestScoringWord("aaaaaa bbb cc f"); // "aaaaaa"
 highestScoringWord("bbb cc f aaaaaa"); // "bbb"
 highestScoringWord("this sentence has two highest scoring words"); // "sentence"
+
+
+
+/* Write a function called beggars that accepts an array and a number. 
+The function should return an array with the sum of what each beggar brings home, assuming they all take regular turns, from the first to the last.
+For example: [1,2,3,4,5] for 2 beggars will return a result of [9,6], as the first one takes [1,3,5], the second collects [2,4].
+The same array with 3 beggars would have in turn have produced a better out come for the second beggar: [5,7,3], as they will respectively take [1,4], [2,5] and [3].
+Not all beggars have to take the same amount of "offers", meaning that the length of the array is not necessarily a multiple of n; length can be even shorter, in which case the last beggars will of course take nothing (0). */
+
+function beggars(arr, num) {
+    if (num === 0) {
+        return [];
+    }
+    let resultArr = [];
+    for (let j = 0; j < arr.length; j += num) {
+        for (let k = 0; k < num; k++) {
+            let temp = resultArr[k] || 0;
+            // arr[j+k] may be undefined if arr.length % num !== 0.
+            // "arr[j+k] || 0" will also cover the "num > arr.length" condition.
+            resultArr[k] = temp + (arr[j+k] || 0);
+        }
+    }
+    return resultArr;
+}
+
+// Another method using "new Array(n).fill(0)" and "i % n" as array index:
+function beggars(values, n) {
+    if(n === 0) return [];
+    var start = new Array(n).fill(0);
+    for (let i = 0; i < values.length; i++){
+      start[i % n] += values[i];
+    }
+    return start;
+}
+
+beggars([1,2,3,4,5],1) // [15]
+beggars([1,2,3,4,5],2) // [9,6]
+beggars([1,2,3,4,5],3) // [5,7,3]
+beggars([1,2,3,4,5],6) // [1,2,3,4,5,0]
+beggars([1,2,3,4,5],0) // []
