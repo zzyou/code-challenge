@@ -12,14 +12,14 @@ function findGreaterNumbers(arr) {
     return count;
 }
 
-findGreaterNumbers([1,2,3]) // 3 
+findGreaterNumbers([1,2,3]) // 3
 findGreaterNumbers([6,1,2,7]) // 4
 findGreaterNumbers([5,4,3,2,1]) // 0
 findGreaterNumbers([]) // 0
 
 
 
-/* Given an array of numbers (not necessarily unique values), your goal is to measure how close the array is to being sorted by counting the number of inversions it has. 
+/* Given an array of numbers (not necessarily unique values), your goal is to measure how close the array is to being sorted by counting the number of inversions it has.
 An inversion occurs when two numbers in the array are out of order.
 Implement a function called numInversions which counts the number of inversions in the array. */
 
@@ -51,7 +51,7 @@ numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 
 
 
-/* Given a sorted array of numbers, return the length of the subarray formed by allowing each number to appear at most two times. 
+/* Given a sorted array of numbers, return the length of the subarray formed by allowing each number to appear at most two times.
 BONUS: if you know what Big O notation is, try to solve this problem in O(n) time complexity, and O(1) space complexity. */
 
 function removeDuplicatesFromSorted(arr) {
@@ -107,20 +107,21 @@ removeDuplicatesFromSorted([]); // 0
 
 function isAlt(str) {
     for (let i = 0; i < str.length - 1; i ++) {
-        if ( (/[aeiou]/.test(str[i]) && /[aeiou]/.test(str[i+1])) || (/[^aeiou]/.test(str[i]) && /[^aeiou]/.test(str[i+1])) ) {
+        if ( (/[aeiou]/.test(str[i]) && /[aeiou]/.test(str[i+1])) ||
+             (/[^aeiou]/.test(str[i]) && /[^aeiou]/.test(str[i+1])) ) {
             return false;
         }
     }
-    return true; 
+    return true;
 }
 
 // Another method using .indexOf() === -1:
 function isAlt(word) {
-    var vowels = ['a','e','i','o','u']; 
+    var vowels = ['a','e','i','o','u'];
     for (var i = 1; i < word.length; i++) {
-      if ((vowels.indexOf(word[i-1]) >= 0 && vowels.indexOf(word[i]) >= 0) || 
+      if ((vowels.indexOf(word[i-1]) >= 0 && vowels.indexOf(word[i]) >= 0) ||
           (vowels.indexOf(word[i-1]) === -1 && vowels.indexOf(word[i]) === -1)) {
-        return false;      
+        return false;
       }
     }
     return true;
