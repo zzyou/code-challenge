@@ -57,7 +57,45 @@ rankings([4, 2, 3, 1]); // [1, 3, 2, 4]
 You should not consider "y" to be a vowel. */
 
 function reverseVowels(str) {
+    let vowelArr = [];
+    let newArr = [];
+    for (let cha of str) {
+        if (/[aeiou]/i.test(cha)) {
+            vowelArr.unshift(cha);
+        }
+    }
+    let i = 0;
+    for (let cha of str) {
+        if (/[aeiou]/i.test(cha)) {
+            newArr.push(vowelArr[i]);
+            i++;
+        } else {
+            newArr.push(cha);
+        }
+    }
+    return newArr.join('');
+}
 
+// Another method using string.indexOf() and two iterators:
+function reverseVowels(str) {
+    var newStr = '';
+    var vowels = 'aeiouAEIOU';
+    var i = 0;
+    var j = str.length - 1;
+    while (i < str.length || j > 0) {
+      // if str[i] is a vowel, or i out of index range
+      if (vowels.indexOf(str[i]) !== -1 || i === str.length) {
+        // while str[j] is not a vowel and j in index range, j-- and continue.
+        while (vowels.indexOf(str[j]) === -1 && j >= 0) j--;
+        // if str[j] is a vowel, push str[j] into newStr, and j--.
+        if (j >= 0) newStr += str[j--];
+      // else str[i] is not a vowel, push str[i] into newStr
+      } else {
+        newStr += str[i];
+      }
+      i++;
+    }
+    return newStr;
 }
 
 reverseVowels("Hello!"); // "Holle!" 
