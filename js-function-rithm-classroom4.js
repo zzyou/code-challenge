@@ -1,5 +1,5 @@
-// Write a function called findTwins, which accepts an array of integers and finds two of same numbers and 
-// returns the number that is repeated twice. The function should return null if there is not a number repeated twice.
+/* Write a function called findTwins, which accepts an array of integers and finds two of same numbers and 
+returns the number that is repeated twice. The function should return null if there is not a number repeated twice. */
 
 function findTwins(arr) {
     var newArr = Array.from(arr);

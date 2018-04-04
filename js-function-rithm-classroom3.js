@@ -1,5 +1,5 @@
-// Write a function called pluck, which takes an array of objects and the name of a key.
-// The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object.
+/* Write a function called pluck, which takes an array of objects and the name of a key.
+The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object. */
 
 function pluck(arr, key) {
     let newArr = [];
@@ -38,9 +38,9 @@ pluck([
 
 
 
-// Write a function called twoHighest that takes an array of numbers as its argument and returns the two highest numbers within the array. 
-// The returned value should be an array in the following format: [secondHighest, highest]
-// The order of the numbers passed in could be any order.
+/* Write a function called twoHighest that takes an array of numbers as its argument and returns the two highest numbers within the array. 
+The returned value should be an array in the following format: [secondHighest, highest]
+The order of the numbers passed in could be any order. */
 
 function twoHighest (arr) {
   arr.sort(function(a, b) {
@@ -78,8 +78,8 @@ twoHighest([1, 2, 2]) // [2, 2];
 
 
 
-// Write a function called minMaxKeyInObject that accepts an object with numeric keys.*
-// The function should return an array with the following format: [lowestKey, highestKey]
+/* Write a function called minMaxKeyInObject that accepts an object with numeric keys.*
+The function should return an array with the following format: [lowestKey, highestKey] */
 
 function minMaxKeyInObject(obj) {
   let keyArr = [];
@@ -121,9 +121,9 @@ minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
 
 
 
-// Write a function called stringFromObject that generates a string from an object's key/value pairs.
-// The format should be "key = value, key = value". 
-// Each key/value pair should be separated by a comma and space except for the last pair.
+/* Write a function called stringFromObject that generates a string from an object's key/value pairs.
+The format should be "key = value, key = value". 
+Each key/value pair should be separated by a comma and space except for the last pair. */
 
 function stringFromObject(obj) {
   let arr = [];
@@ -158,9 +158,9 @@ stringFromObject({});
 
 
 
-// A query string, is a way to send data in an HTTP request, you may see it in a URL starting with a question mark. 
-// Write a function called toQueryString, which accepts an object and returns a string with each key and value separated by a = and each pair separated by a &. 
-// If the value is an array, add another pair to the string with each value.
+/* A query string, is a way to send data in an HTTP request, you may see it in a URL starting with a question mark. 
+Write a function called toQueryString, which accepts an object and returns a string with each key and value separated by a = and each pair separated by a &. 
+If the value is an array, add another pair to the string with each value. */
 
 function toQueryString(obj) {
   var entries = Object.entries(obj);
