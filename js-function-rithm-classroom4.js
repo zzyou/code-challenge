@@ -67,7 +67,8 @@ and each one has a single $100, $50, or $25 bill.
 The clerk wants to sell a ticket to every person in the line. 
 For each input, can she sell a ticket to everyone and give change 
 if she starts with no money and has to go through the line in order? 
-If so, your function should return "YES." If not, it should return "NO."
+If so, your function should return "YES." 
+If not, it should return "NO."
 Write a function called canSellTickets based on the above scenario. 
 Note that for any person in line, the clerk does not know the values of all future bills. 
 The clerk simply tries to make change using whatever she has at the time 
