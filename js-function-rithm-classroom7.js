@@ -1,4 +1,6 @@
-/* Write a function called threeOddNumbers, which accepts an array of numbers and returns true if any three consecutive numbers sum to an odd number. */
+/* Write a function called threeOddNumbers, 
+which accepts an array of numbers 
+and returns true if any three consecutive numbers sum to an odd number. */
 
 function threeOddNumbers(arr) {
     for (let i = 0; i < arr.length - 2; i++) {
@@ -16,7 +18,9 @@ threeOddNumbers([1,2,3,3,2]) // false
 
 
 
-/* Given an array of unique numbers, return a new array of rankings of the original array. For example, if your input array is [10, 5, 20], the output should be [2, 3, 1], since 10 is the second largest number, 5 is the third largest, and 20 is the largest. */
+/* Given an array of unique numbers, return a new array of rankings of the original array. 
+For example, if your input array is [10, 5, 20], the output should be [2, 3, 1], 
+since 10 is the second largest number, 5 is the third largest, and 20 is the largest. */
 
 function rankings(arr) {
     let obj = {};
@@ -53,7 +57,8 @@ rankings([4, 2, 3, 1]); // [1, 3, 2, 4]
 
 
 
-/* Write a function which will reverse the vowels in a string. Any characters which are not vowels should remain in their original position. 
+/* Write a function which will reverse the vowels in a string. 
+Any characters which are not vowels should remain in their original position. 
 You should not consider "y" to be a vowel. */
 
 function reverseVowels(str) {
@@ -107,7 +112,8 @@ reverseVowels("why try, shy fly?"); // "why try, shy fly?"
 
 
 /* Create a function runningAverage that returns a function. 
-When the function returned is passed a value and called, the series is updated with the current average of all previous function calls. 
+When the function returned is passed a value and called, 
+the series is updated with the current average of all previous function calls. 
 You will have to use closure to solve this. 
 You should round all answers to the 2nd decimal place (hundredths). */
 
