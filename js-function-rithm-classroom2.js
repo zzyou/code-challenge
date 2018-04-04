@@ -43,7 +43,8 @@ function keys(obj) {
   
   
   /* Write a function called swapKeyAndValue, which accepts an object and a key. 
-  The function should return a new object with the given key and its value flipped, and all the other key/value pairs unchanged. */
+  The function should return a new object with the given key and its value flipped, 
+  and all the other key/value pairs unchanged. */
   
   function swapKeyAndValue(obj, key) {
     let newObj = {};
@@ -68,7 +69,8 @@ function keys(obj) {
   
   
   /* Write a function called entries, which accepts an object and returns an array of arrays of key-value pairs.
-  In other words, each sub-array is an "entry" in the object with two elements: the first element is the key, and the second element is the value.
+  In other words, each sub-array is an "entry" in the object with two elements: 
+  the first element is the key, and the second element is the value.
   Do not use the built in Object.entries() function! */
   
   function entries(obj) {
@@ -93,7 +95,8 @@ function keys(obj) {
   
   
   
-  /* Write a function called every which accepts an array and a callback function. The function should return true if all values in the array passed to the callback return true, otherwise return false.
+  /* Write a function called every which accepts an array and a callback function. 
+  The function should return true if all values in the array passed to the callback return true, otherwise return false.
   Do not use the built-in Array.every() function! */
   
   function every(arr, func) {
@@ -118,7 +121,8 @@ function keys(obj) {
 
 
 /* Write a function called some which accepts an array and a callback function. 
-The function should return true if any value in the array passed to the callback returns true, otherwise return false. */
+The function should return true if any value in the array passed to the callback returns true, 
+otherwise return false. */
 
 function some(arr, func) {
     for (let val of arr) {
@@ -141,7 +145,8 @@ return val < 2;
 
 
 
-/* Write a function called filter which accepts an array and a callback function. The callback takes a single parameter called val and return a boolean based on some comparison to the value.
+/* Write a function called filter which accepts an array and a callback function. 
+The callback takes a single parameter called val and return a boolean based on some comparison to the value.
 The function should return an array of all values that pass the comparison test.
 Do not use the built-in Array.filter() function! */
 
@@ -171,7 +176,8 @@ filter([1, 2, 3, 4, 5], function(val) {
 
 
 
-/* Write a function called countIf which accepts an array and a callback function. The callback function will return a boolean comparison to its val parameter.
+/* Write a function called countIf which accepts an array and a callback function. 
+The callback function will return a boolean comparison to its val parameter.
 The function should return a count of the number of times the callback returns true when passed each value in the array. */
 
 function countIf(arr, func) {
@@ -203,7 +209,8 @@ countIf(['Tim', 'Matt', 'Elie'], function(val) {
 
 
 
-/* Write a function called countValues which accepts an array and a number and returns the number of times that value appears in the array. */
+/* Write a function called countValues which accepts an array and a number 
+and returns the number of times that value appears in the array. */
 
 function countValues(arr, num) {
     let count = 0;
@@ -221,7 +228,8 @@ countValues([], 1) // 0
 
 
 
-/* Write a function called squareEvenNumbers which accepts an array and returns the sum of all of the even numbers in the array squared. */
+/* Write a function called squareEvenNumbers which accepts an array 
+and returns the sum of all of the even numbers in the array squared. */
 
 function squareEvenNumbers(arr) {
     let sum = 0;
