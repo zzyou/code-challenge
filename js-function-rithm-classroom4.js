@@ -1,5 +1,6 @@
-/* Write a function called findTwins, which accepts an array of integers and finds two of same numbers and 
-returns the number that is repeated twice. The function should return null if there is not a number repeated twice. */
+/* Write a function called findTwins, which accepts an array of integers and finds two of same numbers 
+and returns the number that is repeated twice. 
+The function should return null if there is not a number repeated twice. */
 
 function findTwins(arr) {
     var newArr = Array.from(arr);
@@ -36,7 +37,8 @@ findTwins([3,1,4,2,5]) // null
 
 
 
-/* Write a function generatePairs that accepts an integer and generates an array containing the pairs of integers [a, b]. 
+/* Write a function generatePairs that accepts an integer 
+and generates an array containing the pairs of integers [a, b]. 
 The pairs should be sorted by increasing values of a then increasing values of b. */
 
 function generatePairs(int) {
@@ -60,13 +62,16 @@ generatePairs(0) // [ [0, 0]]
 
 
 /* A clerk works at a movie theater where each ticket costs $25. 
-There is a line of people waiting to buy tickets, and each one has a single $100, $50, or $25 bill. 
+There is a line of people waiting to buy tickets, 
+and each one has a single $100, $50, or $25 bill. 
 The clerk wants to sell a ticket to every person in the line. 
-For each input, can she sell a ticket to everyone and give change if she starts with no money and has to go through the line in order? 
+For each input, can she sell a ticket to everyone and give change 
+if she starts with no money and has to go through the line in order? 
 If so, your function should return "YES." If not, it should return "NO."
 Write a function called canSellTickets based on the above scenario. 
 Note that for any person in line, the clerk does not know the values of all future bills. 
-The clerk simply tries to make change using whatever she has at the time and favors getting rid of larger bills first. */
+The clerk simply tries to make change using whatever she has at the time 
+and favors getting rid of larger bills first. */
 
 function canSellTickets(arr) {
     let twentyfive = [];
@@ -134,6 +139,3 @@ canSellTickets([25, 25, 25, 100]); // "YES"
 canSellTickets([25, 50, 50, 25]); // "NO"
 canSellTickets([25, 50, 25, 100, 25, 25, 25, 50, 50, 100]); // "YES"
 canSellTickets([25, 50, 25, 100, 25, 25, 25, 50, 100, 100]); // "NO"
-
-
-
