@@ -1,4 +1,6 @@
-/* Write a function called repeat, which accepts a string and a number and returns a new string with the string repeated that number of times. */
+/* Write a function called repeat, 
+which accepts a string and a number 
+and returns a new string with the string repeated that number of times. */
 
 function repeat(str, num) {
   var newStr = '';
@@ -14,7 +16,8 @@ repeat('Michael', 0); // ''
 
 
 
-/* Write a function called removeFromString, which accepts a string, a starting index (number) and a number of characters to remove. 
+/* Write a function called removeFromString, 
+which accepts a string, a starting index (number) and a number of characters to remove. 
 The function should return a new string with the characters removed. */
 
 function removeFromString(str, ind, num) {
@@ -43,7 +46,8 @@ removeFromString('Rithm School', 6, 400); // 'Rithm '
 
 
 /* Write a function called pop which accepts an array.
-The function should remove the last value in the array and return the value removed or undefined if the array is empty.
+The function should remove the last value in the array 
+and return the value removed or undefined if the array is empty.
 Do not use the built in Array.pop() function! */
 
 function pop(arr) {
@@ -72,7 +76,8 @@ emptyArr.length; // 0
 
 
 
-/* Write a function called unshift which accepts an array and a value and adds the value to the beginning of the array.
+/* Write a function called unshift which accepts an array and a value 
+and adds the value to the beginning of the array.
 This function should return the new length of the array.
 Do not use the built in Array.unshift() function! */
 
@@ -92,7 +97,9 @@ unshift([4, 5, 6], 10); // 4
 
 
 
-/* Write a function called shift which accepts an array and removes the first value in the array and then returns the value removed. It should return undefined if the array is empty.
+/* Write a function called shift which accepts an array 
+and removes the first value in the array and then returns the value removed. 
+It should return undefined if the array is empty.
 Do not use the built in shift function! */
 
 function shift(arr) {
@@ -117,8 +124,11 @@ emptyArr.length; // 0
 
 
 
-/* Write a function called reverse, which accepts an array and returns the same array with all of the values reversed. In other words, do not solve this by creating a new array.
-Note: returning the same array is called an in-place operation, since no additional space is used. https://en.wikipedia.org/wiki/In-place_algorithm 
+/* Write a function called reverse, which accepts an array 
+and returns the same array with all of the values reversed. 
+In other words, do not solve this by creating a new array.
+Note: returning the same array is called an in-place operation, since no additional space is used. 
+https://en.wikipedia.org/wiki/In-place_algorithm 
 Do not use the built in Array.reverse() function! */
 
 function reverse(arr) {
@@ -151,7 +161,8 @@ arr; // [3, 2, 1]
 
 
 
-/* Write a function called concat, which accepts an array, and a variable amount of parameters (all of which are arrays). 
+/* Write a function called concat, 
+which accepts an array, and a variable amount of parameters (all of which are arrays). 
 The function returns a new array with all of the remaining parameters joined with the array.
 Do not use the built in Array.concat() function! */
 
