@@ -113,10 +113,12 @@ You should round all answers to the 2nd decimal place (hundredths). */
 
 function runningAverage() {
     let num = 0;
-    return function avg(innerNum) {
-        num ++;
-        return ((innerNum + num)/num).toFixed(2);
-    }
+    let count = 0;
+    return function(innerNum) {
+        num += innerNum;
+        count ++;
+        return  +(num/count).toFixed(2);
+    };
 }
 
 rAvg = runningAverage();
