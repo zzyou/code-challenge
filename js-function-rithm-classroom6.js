@@ -1,4 +1,5 @@
-/* Write a function called findGreaterNumbers which accepts an array and returns the number of times a number is followed by a larger number. */
+/* Write a function called findGreaterNumbers which accepts an array 
+and returns the number of times a number is followed by a larger number. */
 
 function findGreaterNumbers(arr) {
     let count = 0;
@@ -19,7 +20,8 @@ findGreaterNumbers([]) // 0
 
 
 
-/* Given an array of numbers (not necessarily unique values), your goal is to measure how close the array is to being sorted by counting the number of inversions it has.
+/* Given an array of numbers (not necessarily unique values), 
+your goal is to measure how close the array is to being sorted by counting the number of inversions it has.
 An inversion occurs when two numbers in the array are out of order.
 Implement a function called numInversions which counts the number of inversions in the array. */
 
@@ -51,8 +53,10 @@ numInversions([8, 6, 6, 1, 1, 1, 3, 4, 2]); // 22
 
 
 
-/* Given a sorted array of numbers, return the length of the subarray formed by allowing each number to appear at most two times.
-BONUS: if you know what Big O notation is, try to solve this problem in O(n) time complexity, and O(1) space complexity. */
+/* Given a sorted array of numbers, 
+return the length of the subarray formed by allowing each number to appear at most two times.
+BONUS: if you know what Big O notation is, 
+try to solve this problem in O(n) time complexity, and O(1) space complexity. */
 
 function removeDuplicatesFromSorted(arr) {
     let newArr = [];
@@ -103,7 +107,8 @@ removeDuplicatesFromSorted([]); // 0
 
 
 
-/* Create a function isAlt that accepts a string as an argument and validates whether the vowels (a, e, i, o, u) and consonants are in alternate order. */
+/* Create a function isAlt that accepts a string as an argument 
+and validates whether the vowels (a, e, i, o, u) and consonants are in alternate order. */
 
 function isAlt(str) {
     for (let i = 0; i < str.length - 1; i ++) {
