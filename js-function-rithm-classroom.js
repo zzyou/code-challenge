@@ -134,7 +134,9 @@ Do not use the built in Array.reverse() function! */
 function reverse(arr) {
   // cannot use "var newArr = arr", 
   // because newArr will change according to arr's change.
-  var newArr = Array.from(arr);
+  // To make a copy of array, use .slice() or Array.from():
+  let newArr = arr.slice();
+  // let newArr = Array.from(arr);
   for (let i = 0; i < arr.length; i++) {
     arr[i] = newArr[(newArr.length - i - 1)];
   }
