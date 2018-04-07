@@ -179,7 +179,7 @@ function game() {
 
         let end = window.prompt('Do you want to end the game? Yes or No');
 
-        if (end === 'Yes' || end === 'yes' || end === 'Y' || end === 'y') {
+        if (end === 'YES' || end === 'Yes' || end === 'yes' || end === 'Y' || end === 'y') {
             return alert('Thank you for playing!');
         } else {
             game();
