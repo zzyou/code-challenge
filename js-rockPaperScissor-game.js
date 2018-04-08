@@ -24,24 +24,24 @@ function game() {
 
     function gameLogic() {
         if (userChoice === computerChoice) {
-            alert("It's a tie!");
+            alert(`${userChoice} V.S. ${computerChoice}. It's a tie!`);
         }
     
         else if ( ( userChoice === 'rock' && computerChoice === 'paper' )
             || ( userChoice === 'scissor' && computerChoice === 'rock' )
             || ( userChoice === 'paper' && computerChoice === 'scissor') ) {
-            alert("You lose.");
+            alert(`${userChoice} V.S. ${computerChoice}. You lose.`);
         }
     
         else if ( ( computerChoice === 'rock' && userChoice === 'paper' )
             || ( computerChoice === 'scissor' && userChoice === 'rock' )
             || ( computerChoice === 'paper' && userChoice === 'scissor') ) {
-            alert("You win!");
+            alert(`${userChoice} V.S. ${computerChoice}. You win!`);
         }
 
         let end = window.prompt('Do you want to end the game? Yes or No');
 
-        if (end === 'YES' || end === 'Yes' || end === 'yes' || end === 'Y' || end === 'y') {
+        if ( end.toLowerCase().includes('y') ) {
             return alert('Thank you for playing!');
         } else {
             game();
