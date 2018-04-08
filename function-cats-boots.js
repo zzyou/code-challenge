@@ -1,6 +1,6 @@
 /* cats & boots.
 
-In interview, ask for example cases!
+Ask for example cases!
 Use helper functions.
 
 I input: num
@@ -95,73 +95,57 @@ function allCase() {
             break;
         }
 
-        if (obj.A && obj.B && obj.C && obj.D
-            && (caseMin.TTTT === undefined) ) {
-                caseMin.TTTT = num;
+        if (obj.A && obj.B && obj.C && obj.D && !caseMin.TTTT ) {
+            caseMin.TTTT = num;
         }
 
-        if (!obj.A && obj.B && obj.C && obj.D
-            && (caseMin.FTTT === undefined) ) {
-                caseMin.FTTT = num;
+        if (!obj.A && obj.B && obj.C && obj.D && !caseMin.FTTT ) {
+            caseMin.FTTT = num;
         }
-        if (obj.A && !obj.B && obj.C && obj.D
-            && (caseMin.TFTT === undefined) ) {
-                caseMin.TFTT = num;
+        if (obj.A && !obj.B && obj.C && obj.D && !caseMin.TFTT ) {
+            caseMin.TFTT = num;
         }
-        if (obj.A && obj.B && !obj.C && obj.D
-            && (caseMin.TTFT === undefined) ) {
-                caseMin.TTFT = num;
+        if (obj.A && obj.B && !obj.C && obj.D && !caseMin.TTFT ) {
+            caseMin.TTFT = num;
         }
-        if (obj.A && obj.B && obj.C && !obj.D
-            && (caseMin.TTTF === undefined) ) {
-                caseMin.TTTF = num;
+        if (obj.A && obj.B && obj.C && !obj.D && !caseMin.TTTF ) {
+            caseMin.TTTF = num;
         }
 
-        if (!obj.A && !obj.B && obj.C && obj.D
-            && (caseMin.FFTT === undefined) ) {
-                caseMin.FFTT = num;
+        if (!obj.A && !obj.B && obj.C && obj.D && !caseMin.FFTT ) {
+            caseMin.FFTT = num;
         }
-        if (!obj.A && obj.B && !obj.C && obj.D
-            && (caseMin.FTFT === undefined) ) {
-                caseMin.FTFT = num;
+        if (!obj.A && obj.B && !obj.C && obj.D && !caseMin.FTFT ) {
+            caseMin.FTFT = num;
         }
-        if (!obj.A && obj.B && obj.C && !obj.D
-            && (caseMin.FTTF === undefined) ) {
-                caseMin.FTTF = num;
+        if (!obj.A && obj.B && obj.C && !obj.D && !caseMin.FTTF ) {
+            caseMin.FTTF = num;
         }
-        if (obj.A && !obj.B && !obj.C && obj.D
-            && (caseMin.TFFT === undefined) ) {
-                caseMin.TFFT = num;
+        if (obj.A && !obj.B && !obj.C && obj.D && !caseMin.TFFT ) {
+            caseMin.TFFT = num;
         }
-        if (obj.A && !obj.B && obj.C && !obj.D
-            && (caseMin.TFTF === undefined) ) {
-                caseMin.TFTF = num;
+        if (obj.A && !obj.B && obj.C && !obj.D && !caseMin.TFTF ) {
+            caseMin.TFTF = num;
         }
-        if (obj.A && obj.B && !obj.C && !obj.D
-            && (caseMin.TTFF === undefined) ) {
-                caseMin.TTFF = num;
+        if (obj.A && obj.B && !obj.C && !obj.D && !caseMin.TTFF ) {
+            caseMin.TTFF = num;
         }
                
-        if (!obj.A && !obj.B && !obj.C && obj.D
-            && (caseMin.FFFT === undefined) ) {
-                caseMin.FFFT = num;
+        if (!obj.A && !obj.B && !obj.C && obj.D && !caseMin.FFFT ) {
+            caseMin.FFFT = num;
         }
-        if (!obj.A && !obj.B && obj.C && !obj.D
-            && (caseMin.FFTF === undefined) ) {
-                caseMin.FFTF = num;
+        if (!obj.A && !obj.B && obj.C && !obj.D && !caseMin.FFTF ) {
+            caseMin.FFTF = num;
         }
-        if (!obj.A && obj.B && !obj.C && !obj.D
-            && (caseMin.FTFF === undefined) ) {
-                caseMin.FTFF = num;
+        if (!obj.A && obj.B && !obj.C && !obj.D && !caseMin.FTFF ) {
+            caseMin.FTFF = num;
         }
-        if (obj.A && !obj.B && !obj.C && !obj.D
-            && (caseMin.TFFF === undefined) ) {
-                caseMin.TFFF = num;
+        if (obj.A && !obj.B && !obj.C && !obj.D && !caseMin.TFFF ) {
+            caseMin.TFFF = num;
         }
 
-        if (!obj.A && !obj.B && !obj.C && !obj.D 
-            && (caseMin.FFFF === undefined) ) {
-                caseMin.FFFF = num;
+        if (!obj.A && !obj.B && !obj.C && !obj.D && !caseMin.FFFF ) {
+            caseMin.FFFF = num;
         }  
 
         num ++;
@@ -171,4 +155,3 @@ function allCase() {
 };
 
 allCase();
-
