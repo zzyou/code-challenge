@@ -152,6 +152,95 @@ function allCase() {
     }
 
     return caseMin;
-};
+}
 
 allCase();
+
+
+// Another method doesn't use helper function:
+function allCase() {
+    let caseMin = {};
+    let num = 1;
+
+    while (true) {
+        if (Object.keys(caseMin).length >= 16) {
+            break;
+        }
+
+        if ( (num % 5 === 0) && (/5/.test(num)) && (num % 7 === 0) && (/7/.test(num)) && !caseMin.TTTT ) {
+            caseMin.TTTT = num;
+        }
+
+        if ( (num % 5 !== 0) && (/5/.test(num)) && (num % 7 === 0) && (/7/.test(num)) && !caseMin.FTTT ) {
+            caseMin.FTTT = num;
+        }
+        if ( (num % 5 === 0) && !(/5/.test(num)) && (num % 7 === 0) && (/7/.test(num)) && !caseMin.TFTT ) {
+            caseMin.TFTT = num;
+        }
+        if ( (num % 5 === 0) && (/5/.test(num)) && (num % 7 !== 0) && (/7/.test(num)) && !caseMin.TTFT ) {
+            caseMin.TTFT = num;
+        }
+        if ( (num % 5 === 0) && (/5/.test(num)) && (num % 7 === 0) && !(/7/.test(num)) && !caseMin.TTTF ) {
+            caseMin.TTTF = num;
+        }
+
+        if ( (num % 5 !== 0) && !(/5/.test(num)) && (num % 7 === 0) && (/7/.test(num)) && !caseMin.FFTT ) {
+            caseMin.FFTT = num;
+        }
+        if ( (num % 5 !== 0) && (/5/.test(num)) && (num % 7 !== 0) && (/7/.test(num)) && !caseMin.FTFT ) {
+            caseMin.FTFT = num;
+        }
+        if ( (num % 5 !== 0) && (/5/.test(num)) && (num % 7 === 0) && !(/7/.test(num)) && !caseMin.FTTF ) {
+            caseMin.FTTF = num;
+        }
+        if ( (num % 5 === 0) && !(/5/.test(num)) && (num % 7 !== 0) && (/7/.test(num)) && !caseMin.TFFT ) {
+            caseMin.TFFT = num;
+        }
+        if ( (num % 5 === 0) && !(/5/.test(num)) && (num % 7 === 0) && !(/7/.test(num)) && !caseMin.TFTF ) {
+            caseMin.TFTF = num;
+        }
+        if ( (num % 5 === 0) && (/5/.test(num)) && (num % 7 !== 0) && !(/7/.test(num)) && !caseMin.TTFF ) {
+            caseMin.TTFF = num;
+        }
+               
+        if ( (num % 5 !== 0) && !(/5/.test(num)) && (num % 7 !== 0) && (/7/.test(num)) && !caseMin.FFFT ) {
+            caseMin.FFFT = num;
+        }
+        if ( (num % 5 !== 0) && !(/5/.test(num)) && (num % 7 === 0) && !(/7/.test(num)) && !caseMin.FFTF ) {
+            caseMin.FFTF = num;
+        }
+        if ( (num % 5 !== 0) && (/5/.test(num)) && (num % 7 !== 0) && !(/7/.test(num)) && !caseMin.FTFF ) {
+            caseMin.FTFF = num;
+        }
+        if ( (num % 5 === 0) && !(/5/.test(num)) && (num % 7 !== 0) && !(/7/.test(num)) && !caseMin.TFFF ) {
+            caseMin.TFFF = num;
+        }
+
+        if ( (num % 5 !== 0) && !(/5/.test(num)) && (num % 7 !== 0) && !(/7/.test(num)) && !caseMin.FFFF ) {
+            caseMin.FFFF = num;
+        }  
+
+        num ++;
+    }
+
+    return caseMin;
+}
+
+allCase();
+
+/* { FFFF: 1,
+  TTFF: 5,
+  FFTT: 7,
+  TFFF: 10,
+  FFTF: 14,
+  FFFT: 17,
+  TTTF: 35,
+  FTFF: 51,
+  FTTF: 56,
+  FTFT: 57,
+  TFTT: 70,
+  TTFT: 75,
+  TFTF: 140,
+  TFFT: 170,
+  TTTT: 175,
+  FTTT: 357 } */
