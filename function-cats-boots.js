@@ -91,7 +91,7 @@ function allCase() {
     while (true) {
         let obj = objCondition(num);
 
-        if (Object.keys(caseMin).length === 16) {
+        if (Object.keys(caseMin).length >= 16) {
             break;
         }
 
