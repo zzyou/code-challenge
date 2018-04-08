@@ -25,7 +25,7 @@ function catsBoots(num) {
     if ( ( num % 5 === 0 
         || /5/.test(num) )
         && ( num % 7 === 0 
-        || num.toString().split('').includes('7') ) ) {
+        || num.toString().includes('7') ) ) {
             return 'cats & boots';
         }
 
@@ -35,7 +35,7 @@ function catsBoots(num) {
         }
     
     else if ( num % 7 === 0 
-        || num.toString().split('').includes('7') ) {
+        || num.toString().includes('7') ) {
             return 'cats';
         }
 
