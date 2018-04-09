@@ -17,16 +17,14 @@ function game() {
     function validation() {
         if (choice.includes(userChoice) || shortChoice.includes(userChoice)) {
             gameLogic();
-            endGame();
+            return endGame();
         }
         // If the user enters nothing, he or she may want to end the game.
         else if (userChoice.length === 0) {
-            endGame();
+            return endGame();
         }
-        else {
-            userChoice = window.prompt('Invalid input. Please only enter rock, paper or scissor.').toLowerCase();
-            return validation();
-        }
+        userChoice = window.prompt('Invalid input. Please only enter rock, paper or scissor.').toLowerCase();
+        return validation();
     }
 
     function gameLogic() {
@@ -34,20 +32,16 @@ function game() {
         // which means userChoice meets the criteria of choice or shortChoice,
         // so only the first index of userChoice needs to be checked.
         if (userChoice[0] === computerChoice[0]) {
-            alert(`${userChoice} V.S. ${computerChoice}. It's a tie!`);
+            return alert(`${userChoice} V.S. ${computerChoice}. It's a tie!`);
         }
 
         else if ( ( userChoice[0] === 'r' && computerChoice === 'paper' )
             || ( userChoice[0] === 's' && computerChoice === 'rock' )
             || ( userChoice[0] === 'p' && computerChoice === 'scissor') ) {
-            alert(`${userChoice} V.S. ${computerChoice}. You lose.`);
+            return alert(`${userChoice} V.S. ${computerChoice}. You lose.`);
         }
     
-        else if ( ( computerChoice === 'rock' && userChoice[0] === 'p' )
-            || ( computerChoice === 'scissor' && userChoice[0] === 'r' )
-            || ( computerChoice === 'paper' && userChoice[0] === 's' ) ) {
-            alert(`${userChoice} V.S. ${computerChoice}. You win!`);
-        }
+        return alert(`${userChoice} V.S. ${computerChoice}. You win!`);
     }
 
     function endGame() {
@@ -57,9 +51,8 @@ function game() {
         // If the user enters nothing, game ends too.
         if ( end[0] === 'y' || end.length === 0 ) {
             return alert('Thank you for playing!');
-        } else {
-            game();
         }
+        return game();
     }
 }
 
