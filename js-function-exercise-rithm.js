@@ -147,12 +147,20 @@ As a bonus, allow your function to ignore whitespace and capitalization
 so that isPalindrome('a man a plan a canal Panama'); 
 returns true. */
 
+// use Array.reverse(), and ignore whitespace:
+// do not use .split(' ') before reverse(), 
+// because str will be splited and reversed for the words seperated by the whitespace, but not for every letter.
+function isPalindrome(str) {
+    return str.toLowerCase().split('').reverse().join('').split(' ').join('') === str.toLowerCase().split(' ').join('');
+}
+
 // this solution ignores whitespace and capitalization:
 function isPalindrome(str) {
     if (str.length === 0 || str.length === 1) {
         return true;
     }
     let newStr = str.toLowerCase().split(' ').join('');
+    // this for loop won't check the middle letter of odd-length str, because of < Math.floor
     for (let i = 0; i < Math.floor(newStr.length / 2); i++) {
         if (newStr[i] !== newStr[newStr.length - i - 1]) {
             return false;
@@ -163,6 +171,7 @@ function isPalindrome(str) {
 
 // neater code, but doesn't ignore whitespace:
 function isPalindrome(str) {
+    // this for loop still check the middle letter of odd-length str, which is not needed.
     for (let i = 0; i < str.length / 2; i++) {
         if (str[i].toLowerCase() !== str[str.length - 1 - i].toLowerCase()) {
             return false;
@@ -171,7 +180,7 @@ function isPalindrome(str) {
     return true;
 }
 
-// another method using .reverse(), but doesn't ignore whitespace:
+// another method using Array.reverse(), but doesn't ignore whitespace:
 function isPalindrome(str) {
     return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
 }
