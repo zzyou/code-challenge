@@ -6,42 +6,56 @@ and based on a random selection - they can either tie/win or lose against a comp
 function game() {
     let userChoice = window.prompt('What is your choice of rock, paper, or scissor?').toLowerCase();
 
-    let random = Math.floor(Math.random() * 3);
     let choice = ['rock', 'paper', 'scissor'];
+    let shortChoice = ['r', 'p', 's'];
+    
+    let random = Math.floor(Math.random() * 3);
     let computerChoice = choice[random];
 
     validation();
 
     function validation() {
-        if (choice.includes(userChoice)) {
-            gameLogic(); 
+        if (choice.includes(userChoice) || shortChoice.includes(userChoice)) {
+            gameLogic();
+            endGame();
+        }
+        // If the user enters nothing, he or she may want to end the game.
+        else if (userChoice.length === 0) {
+            endGame();
         }
         else {
-            userChoice = window.prompt('Invalid input. Please only enter rock, paper or scissor.');
+            userChoice = window.prompt('Invalid input. Please only enter rock, paper or scissor.').toLowerCase();
             return validation();
         }
     }
 
     function gameLogic() {
-        if (userChoice === computerChoice) {
+        // gameLogic() always runs with validation(), 
+        // which means userChoice meets the criteria of choice or shortChoice,
+        // so only the first index of userChoice needs to be checked.
+        if (userChoice[0] === computerChoice[0]) {
             alert(`${userChoice} V.S. ${computerChoice}. It's a tie!`);
         }
-    
-        else if ( ( userChoice === 'rock' && computerChoice === 'paper' )
-            || ( userChoice === 'scissor' && computerChoice === 'rock' )
-            || ( userChoice === 'paper' && computerChoice === 'scissor') ) {
+
+        else if ( ( userChoice[0] === 'r' && computerChoice === 'paper' )
+            || ( userChoice[0] === 's' && computerChoice === 'rock' )
+            || ( userChoice[0] === 'p' && computerChoice === 'scissor') ) {
             alert(`${userChoice} V.S. ${computerChoice}. You lose.`);
         }
     
-        else if ( ( computerChoice === 'rock' && userChoice === 'paper' )
-            || ( computerChoice === 'scissor' && userChoice === 'rock' )
-            || ( computerChoice === 'paper' && userChoice === 'scissor') ) {
+        else if ( ( computerChoice === 'rock' && userChoice[0] === 'p' )
+            || ( computerChoice === 'scissor' && userChoice[0] === 'r' )
+            || ( computerChoice === 'paper' && userChoice[0] === 's' ) ) {
             alert(`${userChoice} V.S. ${computerChoice}. You win!`);
         }
+    }
 
-        let end = window.prompt('Do you want to end the game? Yes or No');
+    function endGame() {
+        let end = window.prompt('Do you want to end the game? Yes or No').toLowerCase();
 
-        if ( end.toLowerCase().includes('y') ) {
+        // 'Yes.', Yes', 'YES', 'yes', 'Y', 'y' are all accepted.
+        // If the user enters nothing, game ends too.
+        if ( end[0] === 'y' || end.length === 0 ) {
             return alert('Thank you for playing!');
         } else {
             game();

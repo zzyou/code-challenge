@@ -13,6 +13,20 @@ function printDay(num) {
     return week[num - 1];
 }
 
+// another method using object:
+function printDay(num) {
+    let dates = {
+        1: "Sunday",
+        2: "Monday",
+        3: "Tuesday",
+        4: "Wednesday",
+        5: "Thursday",
+        6: "Friday",
+        7: "Saturday"
+    };
+    return dates[num];
+}
+
 printDay(4); // "Wednesday"
 printDay(41); // undefined
 
@@ -99,6 +113,24 @@ function arrayManipulation(arr, com, loc, val) {
     }
 }
 
+// neater code:
+function arrayManipulation(arr, com, loc, val) {
+    if (com === 'remove') {
+        if (loc === 'end') {
+            return arr.pop();
+        }
+        return arr.shift();
+    }
+    else if (com === 'add') {
+        if (loc === 'end') {
+            arr.push(val);
+            return arr;
+        }
+        arr.unshift(val);
+        return arr;
+    }
+}
+
 arrayManipulation([1,2,3], "remove", "end"); // 3
 arrayManipulation([1,2,3], "remove", "beginning"); // 1
 arrayManipulation([1,2,3], "add", "beginning", 20); // [20,1,2,3]
@@ -115,6 +147,7 @@ As a bonus, allow your function to ignore whitespace and capitalization
 so that isPalindrome('a man a plan a canal Panama'); 
 returns true. */
 
+// this solution ignores whitespace and capitalization:
 function isPalindrome(str) {
     if (str.length === 0 || str.length === 1) {
         return true;
@@ -126,6 +159,21 @@ function isPalindrome(str) {
         }
     }
     return true;
+}
+
+// neater code, but doesn't ignore whitespace:
+function isPalindrome(str) {
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i].toLowerCase() !== str[str.length - 1 - i].toLowerCase()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// another method using .reverse(), but doesn't ignore whitespace:
+function isPalindrome(str) {
+    return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
 }
 
 isPalindrome('testing'); // false
