@@ -6,6 +6,7 @@ person;
 // ReferenceError.
 // this variable is not initialized, not defined.
 // add var or let or const to declare this variable.
+
 let person;
 
 
@@ -17,6 +18,7 @@ data.displayInfo();
 // so we are invoking undefined which we can not do. 
 // Undefined is not a function.
 // remove the (), will get undefined.
+
 let data = {};
 data.displayInfo;
 
@@ -28,6 +30,7 @@ data.displayInfo.foo = "bar";
 // cannot assign the property on undefined.
 // Undefined is not an object so we can not do that.
 // assign a value to the property displayInfo first.
+
 let data = {};
 data.displayInfo = {};
 data.displayInfo.foo = "bar";
@@ -42,6 +45,7 @@ thing;
 // ReferenceError.
 // cannot access the variable outside of the scope.
 // declare the variable in global scope to access it.
+
 let thing;
 function data() {
     thing = "foo";
@@ -58,6 +62,7 @@ for (var i = 0; i > 5; i++) {
 }
 // the above for loop will never run, because i is not greater than 5.
 // the condition inside the loop was not correct.
+
 for (let i = 0; i < 5; i++) {
     console.log(i);
 }
@@ -71,6 +76,7 @@ function addIfEven(num) {
     return num;
 }
 // = is only assigning value, === is comparing values.
+
 function addIfEven(num) {
     if (num % 2 === 0) {
         return num + 5;
@@ -86,6 +92,7 @@ function loopToFive() {
     }
 }
 // use ; to seperate for loop conditions, but not ,
+
 function loopToFive() {
     for(let i = 0; i < 5; i++) {
         console.log(i);
@@ -114,6 +121,7 @@ displayEvenNumbers(); // should return [2,4,6,8]
 // should compare numbers[i] instead of numbers in if.
 // should push numbers[i] instead of i.
 // should return evenNumbers after the for loop.
+
 function displayEvenNumbers() {
     const numbers = [1,2,3,4,5,6,7,8];
     let evenNumbers = [];
