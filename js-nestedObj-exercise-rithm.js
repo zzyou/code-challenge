@@ -150,4 +150,4 @@ function addCountry(name, capital, population) {
     };
     return countryObj;
 }
-addCountry("france", "Paris", 66900000 );
+addCountry("france", "Paris", 66900000);
