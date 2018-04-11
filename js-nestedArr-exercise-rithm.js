@@ -17,10 +17,14 @@ function rotate(arr, num) {
     return arr;
 }
 
-// Another method using .unshift() and .pop()
+// Another method using %, .unshift() and .pop()
 function rotate(arr, num){
+    // amount is how much you need to move the item
     var amount = num % arr.length;
-    for(var i=0; i< amount; i++){
+    // the last item has to move according to the amount.
+    // if the amount is 2, you have to move the last item twice.
+    for(var i = 0; i < amount; i++){
+      // move the last item from the end to the start.
       arr.unshift(arr.pop());
     }
     return arr;
@@ -61,18 +65,21 @@ function makeXOGrid(rows, columns) {
 }
 
 // Another method using startWithX = true:
-function makeXOGrid(rows,amount){
+function makeXOGrid(rows, amount) {
     var finalArr = [];
     var startWithX = true;
-    for(var i=0; i<rows; i++){
+    for(var i = 0; i < rows; i++) {
         var newRow = [];
-        for(var j=0; j<amount; j++){
-            if(startWithX){
+        for(var j = 0; j < amount; j++) {
+            if(startWithX) {
                 newRow.push("X");
             }
             else {
                 newRow.push("O");
             }
+            // switch startWithX's value every time.
+            // because it's assigning a value, 
+            // this variable's value is accessible and consistent across the whole for loop.
             startWithX = !startWithX;
         }
         finalArr.push(newRow);
