@@ -70,25 +70,25 @@ function countVowels() {
         }
     }
 
-    for (let insideA of nestedArr) {
-        if (Array.isArray(insideA)) {
-            for (let insideB of insideA) {
-                if (Array.isArray(insideB)) {
-                    for (let insideC of insideB) {
-                        if (Array.isArray(insideC)) {
-                            for (let string of insideC) {
+    for (let arrA of nestedArr) {
+        if (Array.isArray(arrA)) {
+            for (let arrB of arrA) {
+                if (Array.isArray(arrB)) {
+                    for (let arrC of arrB) {
+                        if (Array.isArray(arrC)) {
+                            for (let string of arrC) {
                                 checkVowel(string);
                             }
                         } else {
-                            checkVowel(insideC);
+                            checkVowel(arrC);
                         }
                     }
                 } else {
-                    checkVowel(insideB);
+                    checkVowel(arrB);
                 }
             }
         } else {
-            checkVowel(insideA);
+            checkVowel(arrA);
         }
     }
 
