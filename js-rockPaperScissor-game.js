@@ -4,7 +4,7 @@ a user can enter their choice
 and based on a random selection - they can either tie/win or lose against a computer. */
 
 function game() {
-    let userChoice = window.prompt('What is your choice of rock, paper, or scissor?').toLowerCase();
+    let userChoice = prompt('What is your choice of rock, paper, or scissor?').toLowerCase();
 
     let choice = ['rock', 'paper', 'scissor'];
     let shortChoice = ['r', 'p', 's'];
@@ -23,7 +23,7 @@ function game() {
         else if (userChoice.length === 0) {
             return endGame();
         }
-        userChoice = window.prompt('Invalid input. Please only enter rock, paper or scissor.').toLowerCase();
+        userChoice = prompt('Invalid input. Please only enter rock, paper or scissor.').toLowerCase();
         return validation();
     }
 
@@ -45,11 +45,17 @@ function game() {
     }
 
     function endGame() {
-        let end = window.prompt('Do you want to end the game? Yes or No').toLowerCase();
+        // let end = prompt('Do you want to end the game? Yes or No').toLowerCase();
+        // // 'Yes.', Yes', 'YES', 'yes', 'Y', 'y' are all accepted.
+        // // If the user enters nothing, game ends too:
+        // if ( end[0] === 'y' || end.length === 0 ) {
+        //     return alert('Thank you for playing!');
+        // }
+        // return game();
 
-        // 'Yes.', Yes', 'YES', 'yes', 'Y', 'y' are all accepted.
-        // If the user enters nothing, game ends too.
-        if ( end[0] === 'y' || end.length === 0 ) {
+        // use confirm instead of prompt to get true/flase:
+        let end = confirm('Do you want to end the game?');
+        if (end) {
             return alert('Thank you for playing!');
         }
         return game();
