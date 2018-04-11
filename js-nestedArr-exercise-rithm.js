@@ -17,6 +17,15 @@ function rotate(arr, num) {
     return arr;
 }
 
+// Another method using .unshift() and .pop()
+function rotate(arr, num){
+    var amount = num % arr.length;
+    for(var i=0; i< amount; i++){
+      arr.unshift(arr.pop());
+    }
+    return arr;
+}
+
 rotate([1,2,3], 1); // [3,1,2]
 rotate([1,2,3], 2); // [2,3,1]
 rotate([1,2,3], 3); // [1,2,3]
@@ -47,8 +56,28 @@ function makeXOGrid(rows, columns) {
             gridArr[j][k] = arr[k + j*columns];
         }
     }
-    
+
     return gridArr;
+}
+
+// Another method using startWithX = true:
+function makeXOGrid(rows,amount){
+    var finalArr = [];
+    var startWithX = true;
+    for(var i=0; i<rows; i++){
+        var newRow = [];
+        for(var j=0; j<amount; j++){
+            if(startWithX){
+                newRow.push("X");
+            }
+            else {
+                newRow.push("O");
+            }
+            startWithX = !startWithX;
+        }
+        finalArr.push(newRow);
+    }
+    return finalArr;
 }
 
 makeXOGrid(1,4) 
