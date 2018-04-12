@@ -8,7 +8,7 @@ Once the value is 0 it should log "DONE!" and stop. */
 function countDown(num) {
     let timeId = setInterval(function() {
         num--;
-        if (num === 0) {
+        if (num <= 0) {
             clearInterval(timeId);
             return console.log("DONE!");
         }
@@ -37,11 +37,11 @@ function randomGame() {
     let timeId = setInterval(function() {
         let num = Math.random();
         count++;
-        if (num > 0.75) {
+        if (num > .75) {
             clearInterval(timeId);
             // has to console.log to show the count.
             // if only return, it'll show nothing.
-            return console.log(count);
+            return console.log("It took " + count + "try/tries.");
         }
     }, 1000);
 }
@@ -60,6 +60,11 @@ function isEven(num) {
     return num % 2 === 0 ? true: false;
 }
 
+// Neater code:
+function isEven(num) {
+    return num % 2 === 0;
+}
+
 isEven(2); // true
 isEven(3); // false
 
@@ -73,6 +78,11 @@ and returns false if it is not */
 
 function isOdd(num) {
     return num % 2 !== 0 ? true: false;
+}
+
+// Neater code:
+function isOdd(num){
+    return num % 2 !== 0;
 }
 
 isOdd(3); // true
@@ -97,6 +107,16 @@ function isPrime(num) {
         }
     }
     return true;
+}
+
+// Another method using Math.sqrt:
+function isPrime(value) {
+    for (var i = 2; i <= Math.sqrt(value); i++) {
+        if (value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
 }
 
 isPrime(8); // false
@@ -178,6 +198,16 @@ function specialMultiply() {
             return outerNum * num;
         }
     }
+}
+
+// Neater code:
+function specialMultiply(a,b) {
+    if (arguments.length === 1) {
+      return function(b) {
+        return a * b;
+      }
+    }
+    return a * b;
 }
 
 specialMultiply(3,4); // 12
