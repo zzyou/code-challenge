@@ -104,4 +104,57 @@ isPrime(17); // true
 
 
 
+/* numberFact
+Write a function called numberFact 
+which takes in a number and a callback 
+and returns the result of the callback 
+with the number passed to it. */
+
+function numberFact(num, fn) {
+    return fn(num);
+}
+
+numberFact(59,isEven); // false
+numberFact(59,isOdd); // true
+numberFact(59,isPrime); // true
+
+
+
+/* find
+Write a function called find. 
+It should take in an array and a callback 
+and return the first value found in the array 
+that matches the condition. */
+
+function find(arr, fn) {
+    for (let e of arr) {
+        if (fn(e)) {
+            return e;
+        }
+    }
+}
+
+find([8,11,4,27], function(val){return val >= 10}); // 11
+find([8,11,4,27], function(val){return val === 5}); // undefined
+
+
+
+/* findIndex
+Write a function called findIndex. 
+It should take in an array and a callback 
+and return the index of first value found in the array 
+that matches the condition. */
+
+function findIndex(arr, fn) {
+    for (let i = 0; i < arr.length; i++) {
+        if (fn(arr[i])) {
+            return i;
+        }
+    }
+}
+
+findIndex([8,11,4,27], function(val){return val >= 10}); // 1
+findIndex([8,11,4,27], function(val){return val === 7}); // undefined
+
+
 
