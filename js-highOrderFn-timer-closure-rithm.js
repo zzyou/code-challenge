@@ -111,6 +111,9 @@ function isPrime(num) {
 
 // Another method using Math.sqrt:
 function isPrime(value) {
+    // sqrt(value) * sqrt(value) = value
+    // value / sqrt(value) = sqrt(value)
+    // the biggest divisor for value as dividend is sqrt(value)
     for (var i = 2; i <= Math.sqrt(value); i++) {
         if (value % i === 0) {
             return false;
