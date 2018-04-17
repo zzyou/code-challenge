@@ -73,6 +73,35 @@ function twoHighest (arr) {
   return [secondHighest, highest];
 }
 
+// Another method:
+function twoHighest(arr) {
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+  for (let num of arr) {
+    if (num > largest) {
+      secondLargest = largest;
+      largest = num;
+    }
+    else if (num <= largest && num >= secondLargest) {
+      secondLargest = num;
+    }
+  }
+  return [secondLargest, largest];
+}
+
+// Another method:
+function twoHighest(arr) {
+  let largest = Math.max(...arr);
+  let secondLargest = -Infinity;
+  for (let num of arr) {
+    if (num >= secondLargest 
+    && num <= largest) {
+      secondLargest = num;
+    }
+  }
+  return [secondLargest, largest];
+}
+
 twoHighest([1, 2, 10, 8]); // [8, 10]
 twoHighest([6, 1, 9, 10, 4]); // [9,10]
 twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
