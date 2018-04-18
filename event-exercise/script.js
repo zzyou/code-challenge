@@ -5,21 +5,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// Another method:
+window.onload = function() {
+
+};
+
 
 
 /* Replace the text "Change me" with "Hello World!". */
 
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     let h1 = document.getElementById("change_heading");
     h1.innerText = "Hello World!";
-});
+};
 
 
 
 /* When a user hovers over one of the colored boxes 
 change the text to display the color that is being hovered over. */
 
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     let colorDivs = document.querySelectorAll("section div");
     let span = document.querySelector(".selected");
     for (let colorDiv of colorDivs) {
@@ -31,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             span.innerText = "";
         });
     }
-});
+};
 
 
 
@@ -50,10 +55,10 @@ newDiv.classList.add("purple");
 
 /* Append your new div to the page to the section tag. */
 
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     let section = document.querySelector("section");
     section.appendChild(newDiv);
-});
+};
 
 
 
@@ -65,7 +70,7 @@ until one of them is at the end of the screen.
 When one of the blocks reaches the end
  - you should alert "winner!" */
 
- document.addEventListener("DOMContentLoaded", function () {
+ window.onload = function () {
     let button = document.querySelector("button");
 
     let car1 = document.querySelector(".car1");
@@ -106,4 +111,4 @@ When one of the blocks reaches the end
             }
         }, 1000);
     });
-});
+};
