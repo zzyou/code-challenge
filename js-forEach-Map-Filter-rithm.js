@@ -102,3 +102,6 @@ which have truthy values for that key. */
 function filterKey(arr, key) {
     return arr.filter(obj => obj[key]);
 }
+
+filterKey([{name: "Elie", isInstructor:true, isHilarious: false},{name: "Tim", isInstructor:true, isHilarious: true},{name: "Matt", isInstructor:true}], "isHilarious");
+// [{name: "Tim", isInstructor:true, isHilarious:true}]
