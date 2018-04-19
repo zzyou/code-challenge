@@ -47,7 +47,7 @@ function addKeyAndValue(arr, key, val) {
     }, arr);
 }
 // if not starting with arr, it will start with arr[0].
-// so arr[0] won't change (key not being added).
+// then arr[0] won't change (key not being added).
 
 // Another method returning arr instead of acc:
 function addKeyAndValue(arr, key, val) {
