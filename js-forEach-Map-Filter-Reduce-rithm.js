@@ -30,6 +30,33 @@ function addKeyAndValue(arr, key, value) {
     return arr;
 }
 
+// Another method using reduce:
+function addKeyAndValue(arr, key, val) {
+    return arr.reduce((acc, obj) => {
+        obj[key] = val;
+        acc.push(obj);
+        return acc;
+    }, []);
+}
+
+// Another method starting with the original array:
+function addKeyAndValue(arr, key, val) {
+    return arr.reduce((acc, obj) => {
+        obj[key] = val;
+        return acc;
+    }, arr);
+}
+// if not starting with arr, it will start with arr[0].
+// so arr[0] won't change (key not being added).
+
+// Another method returning arr instead of acc:
+function addKeyAndValue(arr, key, val) {
+    return arr.reduce((acc, obj, ind, arr) => {
+        obj[key] = val;
+        return arr;
+    }, arr);
+}
+
 addKeyAndValue([{name: 'Elie'},{name: 'Tim'},{name: 'Elie'}], "isInstructor", true);
 /*
 [
@@ -73,6 +100,16 @@ function extractKey(arr, key) {
     return arr.map(obj => obj[key]);
 }
 
+// Another method using reduce:
+function extractKey(arr, key) {
+    return arr.reduce((acc, obj) => {
+        if (key in obj) {
+            acc.push(obj[key]);
+        }
+        return acc;
+    }, []);
+}
+
 extractKey([{name: "Elie", isInstructor:true},{name: "Tim", isInstructor:true},{name: "Matt", isInstructor:true}], "name");
 // ["Elie", "Tim", "Matt"]
 
@@ -85,6 +122,16 @@ This function should be case insensitive. */
 
 function filterLetters(arr, letter) {
     return (arr.filter(val => val.toLowerCase() === letter.toLowerCase())).length;
+}
+
+// Another method using reduce:
+function filterLetters(array, letter) {
+    return array.reduce((acc, ltr) => {
+        if (ltr.toLowerCase() === letter.toLowerCase()) {
+            acc++;
+        }
+        return acc;
+    }, 0);
 }
 
 filterLetters(["a","a","b","c","A"], "a"); // 3
